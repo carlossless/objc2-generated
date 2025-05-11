@@ -210,6 +210,16 @@ impl IOUSBHostControllerInterface {
             message: NonNull<IOUSBHostCIMessage>,
         ) -> Retained<NSString>;
 
+        #[cfg(feature = "IOUSBHostCIPortStateMachine")]
+        #[unsafe(method(getPortStateMachineForCommand:error:))]
+        #[unsafe(method_family = none)]
+        pub unsafe fn getPortStateMachineForCommand_error(&self, command: NonNull<IOUSBHostCIMessage>, error: Option<&mut Option<Retained<NSError>>>) -> Option<Retained<IOUSBHostCIPortStateMachine>>;
+
+        #[cfg(feature = "IOUSBHostCIPortStateMachine")]
+        #[unsafe(method(getPortStateMachineForPort:error:))]
+        #[unsafe(method_family = none)]
+        pub unsafe fn getPortStateMachineForPort_error(&self, port: NSUInteger, error: Option<&mut Option<Retained<NSError>>>) -> Option<Retained<IOUSBHostCIPortStateMachine>>;
+
         #[cfg(feature = "IOUSBHostCIControllerStateMachine")]
         #[unsafe(method(controllerStateMachine))]
         #[unsafe(method_family = none)]

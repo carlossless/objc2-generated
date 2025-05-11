@@ -563,7 +563,17 @@ pub use self::__IOUSBHostControllerInterfaceDefinitions::IOUSBHostCISetupTransfe
     feature = "IOUSBHostControllerInterfaceDefinitions",
     feature = "objc2-io-kit"
 ))]
+pub use self::__IOUSBHostControllerInterfaceDefinitions::IOUSBHostCISetupTransferData1wIndex;
+#[cfg(all(
+    feature = "IOUSBHostControllerInterfaceDefinitions",
+    feature = "objc2-io-kit"
+))]
 pub use self::__IOUSBHostControllerInterfaceDefinitions::IOUSBHostCISetupTransferData1wIndexPhase;
+#[cfg(all(
+    feature = "IOUSBHostControllerInterfaceDefinitions",
+    feature = "objc2-io-kit"
+))]
+pub use self::__IOUSBHostControllerInterfaceDefinitions::IOUSBHostCISetupTransferData1wLength;
 #[cfg(all(
     feature = "IOUSBHostControllerInterfaceDefinitions",
     feature = "objc2-io-kit"

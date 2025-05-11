@@ -214,7 +214,7 @@ impl IOUSBHostCIMessageStatus {
 }
 
 unsafe impl Encode for IOUSBHostCIMessageStatus {
-    const ENCODING: Encoding = c_uint::ENCODING;
+    const ENCODING: Encoding = c_int::ENCODING;
 }
 
 unsafe impl RefEncode for IOUSBHostCIMessageStatus {
@@ -254,7 +254,7 @@ impl IOUSBHostCIDeviceSpeed {
 }
 
 unsafe impl Encode for IOUSBHostCIDeviceSpeed {
-    const ENCODING: Encoding = c_uint::ENCODING;
+    const ENCODING: Encoding = c_int::ENCODING;
 }
 
 unsafe impl RefEncode for IOUSBHostCIDeviceSpeed {
@@ -297,7 +297,7 @@ impl IOUSBHostCILinkState {
 }
 
 unsafe impl Encode for IOUSBHostCILinkState {
-    const ENCODING: Encoding = c_uint::ENCODING;
+    const ENCODING: Encoding = c_int::ENCODING;
 }
 
 unsafe impl RefEncode for IOUSBHostCILinkState {
@@ -659,7 +659,7 @@ impl IOUSBHostCIEndpointState {
 }
 
 unsafe impl Encode for IOUSBHostCIEndpointState {
-    const ENCODING: Encoding = c_uint::ENCODING;
+    const ENCODING: Encoding = c_int::ENCODING;
 }
 
 unsafe impl RefEncode for IOUSBHostCIEndpointState {
@@ -703,9 +703,15 @@ pub const IOUSBHostCISetupTransferData1wValue: c_ulong = IOUSBBitRange64!(16, 31
 /// [Apple's documentation](https://developer.apple.com/documentation/iousbhost/iousbhostcisetuptransferdata1wvaluephase?language=objc)
 #[cfg(feature = "objc2-io-kit")]
 pub const IOUSBHostCISetupTransferData1wValuePhase: c_ulong = IOUSBBitRangePhase!(16, 31);
+/// [Apple's documentation](https://developer.apple.com/documentation/iousbhost/iousbhostcisetuptransferdata1windex?language=objc)
+#[cfg(feature = "objc2-io-kit")]
+pub const IOUSBHostCISetupTransferData1wIndex: c_ulong = IOUSBBitRange!(32, 47);
 /// [Apple's documentation](https://developer.apple.com/documentation/iousbhost/iousbhostcisetuptransferdata1windexphase?language=objc)
 #[cfg(feature = "objc2-io-kit")]
 pub const IOUSBHostCISetupTransferData1wIndexPhase: c_ulong = IOUSBBitRangePhase!(32, 47);
+/// [Apple's documentation](https://developer.apple.com/documentation/iousbhost/iousbhostcisetuptransferdata1wlength?language=objc)
+#[cfg(feature = "objc2-io-kit")]
+pub const IOUSBHostCISetupTransferData1wLength: c_ulong = IOUSBBitRange!(48, 63);
 /// [Apple's documentation](https://developer.apple.com/documentation/iousbhost/iousbhostcisetuptransferdata1wlengthphase?language=objc)
 #[cfg(feature = "objc2-io-kit")]
 pub const IOUSBHostCISetupTransferData1wLengthPhase: c_ulong = IOUSBBitRangePhase!(48, 63);
